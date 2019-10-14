@@ -36,8 +36,11 @@ const fs = require('fs');
 // })
 
 const names = 'Hsiu Kellem Judie Dorfman Rosena Bebout Dawne Pereda Jayson Janicki Hellen Kissell'
-
-fs.appendFile('users.txt', names, (err) => {
-  if (err) console.log(err);
-  else console.log('success ')
+fs.readFile('names.txt', (err, data) => {
+  if (err) return console.log(err);
+  console.log(data);
+  fs.appendFile('users.txt', data, (err) => {
+    if (err) console.log(err);
+    else console.log('success ')
+  })
 })
