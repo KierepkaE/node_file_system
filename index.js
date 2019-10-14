@@ -18,7 +18,12 @@ const fs = require('fs');
 // }
 
 
-fs.readFile('users.txt', 'utf8', (err, data) => {
-  if (err) console.log(err);
-  console.log(data);
-})
+// fs.readFile('users.txt', 'utf8', (err, data) => {
+//   if (err) console.log(err);
+//   console.log(data);
+// })
+try {
+  console.log(fs.readFileSync('users.txt', 'utf8'));
+} catch (err) {
+  console.log(err);
+}
