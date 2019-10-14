@@ -22,8 +22,15 @@ const fs = require('fs');
 //   if (err) console.log(err);
 //   console.log(data);
 // })
-try {
-  console.log(fs.readFileSync('users.txt', 'utf8'));
-} catch (err) {
-  console.log(err);
-}
+// try {
+//   console.log(fs.readFileSync('users.txt', 'utf8'));
+// } catch (err) {
+//   console.log(err);
+// }
+fs.readFile('names.txt', 'utf8', (err, data) => {
+  if (err) return console.log(err);
+  fs.writeFile('users.txt', data, (err) => {
+    if (err) console.log(err);
+    else console.log('success')
+  })
+})
