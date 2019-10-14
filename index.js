@@ -11,4 +11,8 @@ fs.access('./names.txt', fs.constants.W_OK, (err) => {
 // })
 
 
-fs.renameSync('newNames.txt', 'names.txt')
+try {
+  fs.renameSync('names.txt', 'users.txt');
+} catch (err) {
+  console.log(err);
+}
