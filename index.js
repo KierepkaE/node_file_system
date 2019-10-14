@@ -1,7 +1,7 @@
 const fs = require('fs');
-fs.access('./names.txt', fs.constants.W_OK, (err) => {
-  console.log(err);
-});
+// fs.access('./names.txt', fs.constants.W_OK, (err) => {
+//   console.log(err);
+// });
 
 // fs.rename('names.txt', 'newNames.txt', (err) => {
 //   if (err) throw err;
@@ -11,8 +11,14 @@ fs.access('./names.txt', fs.constants.W_OK, (err) => {
 // })
 
 
-try {
-  fs.renameSync('names.txt', 'users.txt');
-} catch (err) {
-  console.log(err);
-}
+// try {
+//   fs.renameSync('names.txt', 'users.txt');
+// } catch (err) {
+//   console.log(err);
+// }
+
+
+fs.readFile('users.txt', 'utf8', (err, data) => {
+  if (err) console.log(err);
+  console.log(data);
+})
