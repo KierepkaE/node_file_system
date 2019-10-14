@@ -27,10 +27,17 @@ const fs = require('fs');
 // } catch (err) {
 //   console.log(err);
 // }
-fs.readFile('names.txt', 'utf8', (err, data) => {
-  if (err) return console.log(err);
-  fs.writeFile('users.txt', data, (err) => {
-    if (err) console.log(err);
-    else console.log('success')
-  })
+// fs.readFile('names.txt', 'utf8', (err, data) => {
+//   if (err) return console.log(err);
+//   fs.writeFile('users.txt', data, (err) => {
+//     if (err) console.log(err);
+//     else console.log('success ')
+//   })
+// })
+
+const names = 'Hsiu Kellem Judie Dorfman Rosena Bebout Dawne Pereda Jayson Janicki Hellen Kissell'
+
+fs.appendFile('users.txt', names, (err) => {
+  if (err) console.log(err);
+  else console.log('success ')
 })
