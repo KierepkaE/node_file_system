@@ -4,7 +4,7 @@
 
 - clone this repo
 - run `npm install`
-- in the console: `node app.js`
+- in the console: `node index.js`
 
 #### Tech:
 
